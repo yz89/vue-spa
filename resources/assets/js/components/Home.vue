@@ -5,9 +5,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Example Component</div>
 
-                    <div v-for="post in posts" :key="post.id" class="bs-callout bs-callout-danger">
-                        <h4><router-link :to="{ name: 'posts', params: {id: post.id} }">{{ post.title }}</router-link></h4>
-                        <p>{{ post.body }}</p>
+                    <div class="panel-body">
+                        <div v-for="post in posts" :key="post.id" class="bs-callout bs-callout-danger">
+                            <h4><router-link :to="{ name: 'posts', params: {id: post.id} }">{{ post.title }}</router-link></h4>
+                            <p>{{ post.body }}</p>
+                        </div>
                     </div>
                 </div>
             </div>

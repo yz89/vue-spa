@@ -45746,6 +45746,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -45773,14 +45775,14 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-        _c(
-          "div",
-          { staticClass: "panel panel-default" },
-          [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("Example Component")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "panel-body" },
             _vm._l(_vm.posts, function(post) {
               return _c(
                 "div",
@@ -45806,9 +45808,8 @@ var render = function() {
                 ]
               )
             })
-          ],
-          2
-        )
+          )
+        ])
       ])
     ])
   ])
@@ -46013,6 +46014,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -46049,11 +46052,13 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { key: _vm.post.id, staticClass: "bs-callout bs-callout-danger" },
-            [_c("p", [_vm._v(_vm._s(_vm.post.body))])]
-          )
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "div",
+              { key: _vm.post.id, staticClass: "bs-callout bs-callout-danger" },
+              [_c("p", [_vm._v(_vm._s(_vm.post.body))])]
+            )
+          ])
         ])
       ])
     ])

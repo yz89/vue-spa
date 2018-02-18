@@ -7,8 +7,10 @@
                         {{ post.title }}
                     </div>
 
-                    <div :key="post.id" class="bs-callout bs-callout-danger">
-                        <p>{{ post.body }}</p>
+                    <div class="panel-body">
+                        <div :key="post.id" class="bs-callout bs-callout-danger">
+                            <p>{{ post.body }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
