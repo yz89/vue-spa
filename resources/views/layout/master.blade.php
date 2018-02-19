@@ -10,23 +10,7 @@
     </head>
     <body>
         <div id="app">
-            <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                  <router-link to="/" class="navbar-brand">Home</router-link>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                    <router-link to="/about" tag="li">
-                        <a>About</a>
-                    </router-link>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-            <router-view></router-view>
+            <app></app>
         </div>
         <script src="/js/app.js"></script>
     </body>
