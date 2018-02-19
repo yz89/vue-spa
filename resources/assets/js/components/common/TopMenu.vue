@@ -9,6 +9,9 @@
             <router-link to="/about" tag="li">
                 <a>About</a>
             </router-link>
+            <li>
+                <router-link to="/register">Register</router-link>
+            </li>
             </ul>
         </div>
         </div>
