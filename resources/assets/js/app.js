@@ -11,7 +11,7 @@ window.Vue = require('vue')
 import VueRouter from 'vue-router'
 import router from './routes'
 import App from './components/App'
-import zh_CN from './components/locale/zh_CN'
+import zh_CN from './locale/zh_CN'
 import VeeValidate, { Validator } from 'vee-validate'
 
 // Localize takes the locale object as the second argument (optional) and merges it.
