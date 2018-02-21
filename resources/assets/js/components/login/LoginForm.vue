@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import JWTToken from '../../helpers/jwt'
 export default {
     data() {
         return {
@@ -48,16 +47,9 @@ export default {
                 email: this.email,
                 password: this.password
             }
-            axios
-                .post('/api/login', formData)
-                .then(response => {
-                    console.log(response.data)
-                    JWTToken.setToken(response.data.token)
-                    // this.$router.push({ name: 'confirm' })
-                })
-                .catch(error => {
-                    console.log(error.response.data)
-                })
+            this.$store.dispatch('loginRequest', formData).then(response => {
+                this.$router.push({ name: 'profile' })
+            })
         }
     }
 }
