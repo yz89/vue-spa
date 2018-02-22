@@ -9,9 +9,16 @@
 
 <script>
 import TopMenu from './common/TopMenu'
+import JwtToken from '../helpers/jwt'
+
 export default {
-  components: {
-    TopMenu
-  }
+    created() {
+        if (JwtToken.getToken()) {
+            this.$store.dispatch('setAuthUser')
+        }
+    },
+    components: {
+        TopMenu
+    }
 }
 </script>
