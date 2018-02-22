@@ -5,6 +5,7 @@ import JwtToken from './helpers/jwt'
 let routes = [
     {
         path: '/',
+        name: 'home',
         component: require('./components/pages/Home'),
         meta: {}
     },
@@ -23,7 +24,7 @@ let routes = [
         path: '/register',
         name: 'register',
         component: require('./components/register/Register'),
-        meta: {}
+        meta: { requireGuest: true }
     },
     {
         path: '/confirm',
@@ -35,7 +36,7 @@ let routes = [
         path: '/login',
         name: 'login',
         component: require('./components/login/Login'),
-        meta: {}
+        meta: { requireGuest: true }
     },
     {
         path: '/profile',
@@ -58,6 +59,15 @@ router.beforeEach((to, from, next) => {
             return next({ name: 'login' })
         }
     }
+
+    if (to.meta.requireGuest) {
+        if (JwtToken.getToken()) {
+            return next({ name: 'home' })
+        } else {
+            return next()
+        }
+    }
+
     next()
 })
 
