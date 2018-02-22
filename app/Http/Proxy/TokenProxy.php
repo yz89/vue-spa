@@ -45,7 +45,7 @@ class TokenProxy
         return response()->json([
             'token' => $token['access_token'],
             'expires_in' => $token['expires_in']
-        ])->cookie('refreshToken', $token['refresh_token'], 86400, null, null, false, true);
+        ])->cookie('refreshToken', $token['refresh_token'], 14400, null, null, false, true);
 
     }
 

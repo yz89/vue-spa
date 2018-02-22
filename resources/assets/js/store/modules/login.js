@@ -3,7 +3,7 @@ import JwtToken from '../../helpers/jwt'
 export default {
     actions: {
         loginRequest({ dispatch }, formData) {
-            axios
+            return axios
                 .post('/api/login', formData)
                 .then(response => {
                     console.log(response.data)
@@ -11,7 +11,7 @@ export default {
                     dispatch('setAuthUser')
                 })
                 .catch(error => {
-                    console.log(error)
+                    console.log(error.response.data)
                 })
         }
     }
