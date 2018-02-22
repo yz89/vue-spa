@@ -45,4 +45,25 @@ class LoginController extends Controller
     {
         return $this->proxy->login(request('email'), request('password'));
     }
+
+    public function logout()
+    {
+        $user = auth()->guard('api')->user();
+
+        $accessToken = $user->token();
+
+        app('db')->table('oauth_refresh_tokens')
+            ->where('access_token_id', $accessToken->id)
+            ->update([
+                'revoked' => true
+            ]);
+
+        app('cookie')->forget('refreshToken');
+
+        $accessToken->revoke();
+
+        return response()->json([
+            'message' => 'Logout!'
+        ], 204);
+    }
 }
