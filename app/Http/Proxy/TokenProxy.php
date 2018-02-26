@@ -28,6 +28,15 @@ class TokenProxy
         ], 421);
     }
 
+    public function refreshToken()
+    {
+        $refreshToken = request()->cookie('refreshToken');
+
+        return $this->proxy('refresh_token', [
+            'refresh_token' => $refreshToken
+        ]);
+    }
+
     public function proxy($grantType, array $data = [])
     {
         $data = array_merge($data, [
@@ -44,6 +53,7 @@ class TokenProxy
 
         return response()->json([
             'token' => $token['access_token'],
+            'auth_id' => md5($token['refresh_token']),
             'expires_in' => $token['expires_in']
         ])->cookie('refreshToken', $token['refresh_token'], 14400, null, null, false, true);
 

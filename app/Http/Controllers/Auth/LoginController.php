@@ -66,4 +66,9 @@ class LoginController extends Controller
             'message' => 'Logout!'
         ], 204);
     }
+
+    public function refresh()
+    {
+        return $this->proxy->refreshToken();
+    }
 }
